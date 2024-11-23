@@ -1,0 +1,7 @@
+---
+- name: Init VMs
+  hosts: all
+  become: true
+
+  roles:
+    - system_init
