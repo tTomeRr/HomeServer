@@ -1,7 +1,13 @@
 ---
-- name: Init VMs
-  hosts: all
-  become: true
+# - name: Init VMs
+#   hosts: all
+#   become: true
+#   roles:
+#     - system_init
 
+- name: Init Rancher Master Nodes
+  hosts: rancher_master_nodes
+  become: true
+  become_user: root
   roles:
-    - system_init
+    - rancher_control_node
